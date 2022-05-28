@@ -17,6 +17,8 @@
 		26D76659284113D000F80E80 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D76658284113D000F80E80 /* DownloadsViewController.swift */; };
 		26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7665B2841140D00F80E80 /* HomeViewController.swift */; };
 		26D7666228412AB600F80E80 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7666128412AB600F80E80 /* CollectionViewTableViewCell.swift */; };
+		26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7666328413C9600F80E80 /* HeroHeaderUIView.swift */; };
+		26D7666628413FD300F80E80 /* dune-wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D7666528413FD300F80E80 /* dune-wallpaper.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		26D76658284113D000F80E80 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		26D7665B2841140D00F80E80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26D7666128412AB600F80E80 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		26D7666328413C9600F80E80 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		26D7666528413FD300F80E80 /* dune-wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dune-wallpaper.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				26D7666128412AB600F80E80 /* CollectionViewTableViewCell.swift */,
+				26D7666328413C9600F80E80 /* HeroHeaderUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		26D766602841293600F80E80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26D7666528413FD300F80E80 /* dune-wallpaper.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			files = (
 				26D7664C28410D6C00F80E80 /* LaunchScreen.storyboard in Resources */,
 				26D7664928410D6C00F80E80 /* Assets.xcassets in Resources */,
+				26D7666628413FD300F80E80 /* dune-wallpaper.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,7 @@
 				26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */,
 				26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */,
 				26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */,
+				26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
