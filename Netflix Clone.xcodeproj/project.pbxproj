@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261112A22842E30F008F99E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261112A12842E30F008F99E7 /* Assets.xcassets */; };
+		261112A728438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 261112A428438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf */; };
+		261112A828438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */; };
+		261112A928438E7E008F99E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 261112A628438E7E008F99E7 /* OFL.txt */; };
+		261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AB284441C8008F99E7 /* ApiCaller.swift */; };
+		261112AE284441DA008F99E7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AD284441DA008F99E7 /* Movie.swift */; };
 		26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7663F28410D6A00F80E80 /* AppDelegate.swift */; };
 		26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664128410D6A00F80E80 /* SceneDelegate.swift */; };
 		26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664328410D6A00F80E80 /* TabBarViewController.swift */; };
-		26D7664928410D6C00F80E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D7664828410D6C00F80E80 /* Assets.xcassets */; };
 		26D7664C28410D6C00F80E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D7664A28410D6C00F80E80 /* LaunchScreen.storyboard */; };
 		26D766552841139900F80E80 /* UpComingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D766542841139900F80E80 /* UpComingViewController.swift */; };
 		26D76657284113B800F80E80 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D76656284113B800F80E80 /* SearchViewController.swift */; };
@@ -22,11 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		261112A12842E30F008F99E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		261112A428438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TiroDevanagariSanskrit-Regular.ttf"; sourceTree = "<group>"; };
+		261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TiroDevanagariSanskrit-Italic.ttf"; sourceTree = "<group>"; };
+		261112A628438E7E008F99E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		261112AB284441C8008F99E7 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		261112AD284441DA008F99E7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		26D7663C28410D6A00F80E80 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D7663F28410D6A00F80E80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D7664128410D6A00F80E80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		26D7664328410D6A00F80E80 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		26D7664828410D6C00F80E80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26D7664B28410D6C00F80E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26D7664D28410D6C00F80E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D766542841139900F80E80 /* UpComingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		261112A328438E7E008F99E7 /* Tiro_Devanagari_Sanskrit */ = {
+			isa = PBXGroup;
+			children = (
+				261112A428438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf */,
+				261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */,
+				261112A628438E7E008F99E7 /* OFL.txt */,
+			);
+			path = Tiro_Devanagari_Sanskrit;
+			sourceTree = "<group>";
+		};
+		261112AA2844419E008F99E7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				261112AB284441C8008F99E7 /* ApiCaller.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		26D7663328410D6A00F80E80 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +96,7 @@
 		26D7663E28410D6A00F80E80 /* Netflix Clone */ = {
 			isa = PBXGroup;
 			children = (
+				261112AA2844419E008F99E7 /* Managers */,
 				26D766602841293600F80E80 /* Resources */,
 				26D7665D284128F400F80E80 /* Models */,
 				26D7665E284128FA00F80E80 /* Views */,
@@ -76,9 +105,10 @@
 				26D7663F28410D6A00F80E80 /* AppDelegate.swift */,
 				26D7664128410D6A00F80E80 /* SceneDelegate.swift */,
 				26D7664328410D6A00F80E80 /* TabBarViewController.swift */,
-				26D7664828410D6C00F80E80 /* Assets.xcassets */,
+				261112A12842E30F008F99E7 /* Assets.xcassets */,
 				26D7664A28410D6C00F80E80 /* LaunchScreen.storyboard */,
 				26D7664D28410D6C00F80E80 /* Info.plist */,
+				261112A328438E7E008F99E7 /* Tiro_Devanagari_Sanskrit */,
 			);
 			path = "Netflix Clone";
 			sourceTree = "<group>";
@@ -97,6 +127,7 @@
 		26D7665D284128F400F80E80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				261112AD284441DA008F99E7 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,9 +214,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261112A928438E7E008F99E7 /* OFL.txt in Resources */,
+				261112A728438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf in Resources */,
 				26D7664C28410D6C00F80E80 /* LaunchScreen.storyboard in Resources */,
-				26D7664928410D6C00F80E80 /* Assets.xcassets in Resources */,
+				261112A22842E30F008F99E7 /* Assets.xcassets in Resources */,
 				26D7666628413FD300F80E80 /* dune-wallpaper.png in Resources */,
+				261112A828438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +239,8 @@
 				26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */,
 				26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */,
 				26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */,
+				261112AE284441DA008F99E7 /* Movie.swift in Sources */,
+				261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

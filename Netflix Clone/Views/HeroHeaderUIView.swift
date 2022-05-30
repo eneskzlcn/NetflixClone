@@ -12,9 +12,9 @@ class HeroHeaderUIView: UIView {
     // MARK: UI Variables
     private let heroImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "dune2.jpg")
+        imageView.image = UIImage(named: "dune-wallpaper.png")
         return imageView
     }()
     private let playButton: UIButton = {
