@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["Trending Movies","Popular","Trending Tv","Upcoming Movies","Top rated"]
+    let sectionTitles : [String] = ["Trending Movies","Trending Tv","Popular","Upcoming Movies","Top rated"]
     private let homeFeedTable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -28,6 +28,16 @@ class HomeViewController: UIViewController {
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = heroHeaderView
             
+//        getTrendingMovies()
+        ApiCaller.shared.getTrendingMoviesGenericly { results in
+            switch results {
+            case .success(let trendingMoviesResponse):
+                print(trendingMoviesResponse.results[0])
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
     
     private func configureNavbar() {
@@ -38,6 +48,16 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+    }
+    private func getTrendingMovies() {
+        ApiCaller.shared.getTrendingMovies{ results in
+            switch results {
+            case .success(let movies):
+                print(movies[0])
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
@@ -77,19 +97,6 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.font = UIFont(name: "Tiro Devanagari Sanskrit Regular", size: 15)
         header.textLabel?.textColor = .white
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x, y: header.bounds.origin.y, width: 100, height: header.frame.height)
-        header.textLabel?.text = header.textLabel?.text?.titleCased()
+//        header.textLabel?.text = header.textLabel?.text?.titleCased()
     }
-}
-
-extension String {
-    func titleCased() -> String {
-        let words = self.split(separator: " ")
-        var titleCasedString : String = ""
-        for word in words {
-            let titleCasedWord = word.prefix(1).capitalized + word.dropFirst()
-            titleCasedString = titleCasedString + titleCasedWord + " "
-        }
-        return (titleCasedString.dropLast() + "")
-    }
-    
 }

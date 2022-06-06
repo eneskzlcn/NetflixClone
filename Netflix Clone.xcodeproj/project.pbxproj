@@ -13,6 +13,9 @@
 		261112A928438E7E008F99E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 261112A628438E7E008F99E7 /* OFL.txt */; };
 		261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AB284441C8008F99E7 /* ApiCaller.swift */; };
 		261112AE284441DA008F99E7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AD284441DA008F99E7 /* Movie.swift */; };
+		2697B4B2284E7E390077660F /* StringOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B1284E7E390077660F /* StringOperations.swift */; };
+		2697B4B4284E862E0077660F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B3284E862E0077660F /* Media.swift */; };
+		2697B4B6284E8A220077660F /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B5284E8A220077660F /* Tv.swift */; };
 		26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7663F28410D6A00F80E80 /* AppDelegate.swift */; };
 		26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664128410D6A00F80E80 /* SceneDelegate.swift */; };
 		26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664328410D6A00F80E80 /* TabBarViewController.swift */; };
@@ -23,7 +26,6 @@
 		26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7665B2841140D00F80E80 /* HomeViewController.swift */; };
 		26D7666228412AB600F80E80 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7666128412AB600F80E80 /* CollectionViewTableViewCell.swift */; };
 		26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7666328413C9600F80E80 /* HeroHeaderUIView.swift */; };
-		26D7666628413FD300F80E80 /* dune-wallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 26D7666528413FD300F80E80 /* dune-wallpaper.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,9 @@
 		261112A628438E7E008F99E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		261112AB284441C8008F99E7 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		261112AD284441DA008F99E7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		2697B4B1284E7E390077660F /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
+		2697B4B3284E862E0077660F /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		2697B4B5284E8A220077660F /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 		26D7663C28410D6A00F80E80 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D7663F28410D6A00F80E80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D7664128410D6A00F80E80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +50,6 @@
 		26D7665B2841140D00F80E80 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26D7666128412AB600F80E80 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		26D7666328413C9600F80E80 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
-		26D7666528413FD300F80E80 /* dune-wallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dune-wallpaper.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				261112AD284441DA008F99E7 /* Movie.swift */,
+				2697B4B3284E862E0077660F /* Media.swift */,
+				2697B4B5284E8A220077660F /* Tv.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,7 +157,7 @@
 		26D766602841293600F80E80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				26D7666528413FD300F80E80 /* dune-wallpaper.png */,
+				2697B4B1284E7E390077660F /* StringOperations.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,7 +224,6 @@
 				261112A728438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf in Resources */,
 				26D7664C28410D6C00F80E80 /* LaunchScreen.storyboard in Resources */,
 				261112A22842E30F008F99E7 /* Assets.xcassets in Resources */,
-				26D7666628413FD300F80E80 /* dune-wallpaper.png in Resources */,
 				261112A828438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,8 +242,11 @@
 				26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */,
 				26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */,
 				26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */,
+				2697B4B2284E7E390077660F /* StringOperations.swift in Sources */,
 				26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */,
 				26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */,
+				2697B4B4284E862E0077660F /* Media.swift in Sources */,
+				2697B4B6284E8A220077660F /* Tv.swift in Sources */,
 				261112AE284441DA008F99E7 /* Movie.swift in Sources */,
 				261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */,
 			);
