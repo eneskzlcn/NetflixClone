@@ -32,8 +32,8 @@ class ApiCaller {
     func getTrendingMoviesGenericly(completion: @escaping(Result<TrendingMoviesResponse,Error>)->Void) {
         URLSession.shared.getMedias(url: fullApiURL(for: .trendingMoviesRoute), completion: completion)
     }
-    func getTrendingTvsGenericly(completion: @escaping(Result<TrendingMoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullApiURL(for: .trendingMoviesRoute), completion: completion)
+    func getTrendingTvsGenericly(completion: @escaping(Result<TrendingTvsResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullApiURL(for: .trendingTvsRoute), completion: completion)
     }
     private func fullApiURL(for route: ApiRoutes) -> String {
         "\(Constants.baseURL)\(route.rawValue)?api_key=\(Constants.API_KEY)"

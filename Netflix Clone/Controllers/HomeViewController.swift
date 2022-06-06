@@ -29,14 +29,22 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = heroHeaderView
             
 //        getTrendingMovies()
-        ApiCaller.shared.getTrendingMoviesGenericly { results in
+//        ApiCaller.shared.getTrendingMoviesGenericly { results in
+//            switch results {
+//            case .success(let trendingMoviesResponse):
+//                print(trendingMoviesResponse.results[0])
+//            case .failure(let error):
+//                print(error)
+//            }
+//
+//        }
+        ApiCaller.shared.getTrendingTvsGenericly { results in
             switch results {
-            case .success(let trendingMoviesResponse):
-                print(trendingMoviesResponse.results[0])
-            case .failure(let error):
-                print(error)
-            }
-            
+                      case .success(let trendingTvsResponse):
+                          print(trendingTvsResponse.results[0])
+                      case .failure(let error):
+                          print(error)
+        }
         }
     }
     
