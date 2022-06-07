@@ -27,18 +27,7 @@ class HomeViewController: UIViewController {
         configureNavbar()
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = heroHeaderView
-            
-//        getTrendingMovies()
-//        ApiCaller.shared.getTrendingMoviesGenericly { results in
-//            switch results {
-//            case .success(let trendingMoviesResponse):
-//                print(trendingMoviesResponse.results[0])
-//            case .failure(let error):
-//                print(error)
-//            }
-//
-//        }
-        ApiCaller.shared.getTopRatedMovies { results in
+        ApiCaller.shared.getMovies(section: .topRatedMovies) { results in
             switch results {
                       case .success(let trendingTvsResponse):
                           print(trendingTvsResponse)

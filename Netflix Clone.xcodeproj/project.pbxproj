@@ -12,10 +12,8 @@
 		261112A828438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */; };
 		261112A928438E7E008F99E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 261112A628438E7E008F99E7 /* OFL.txt */; };
 		261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AB284441C8008F99E7 /* ApiCaller.swift */; };
-		261112AE284441DA008F99E7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AD284441DA008F99E7 /* Movie.swift */; };
 		2697B4B2284E7E390077660F /* StringOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B1284E7E390077660F /* StringOperations.swift */; };
 		2697B4B4284E862E0077660F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B3284E862E0077660F /* Media.swift */; };
-		2697B4B6284E8A220077660F /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B5284E8A220077660F /* Tv.swift */; };
 		26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7663F28410D6A00F80E80 /* AppDelegate.swift */; };
 		26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664128410D6A00F80E80 /* SceneDelegate.swift */; };
 		26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664328410D6A00F80E80 /* TabBarViewController.swift */; };
@@ -34,10 +32,8 @@
 		261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TiroDevanagariSanskrit-Italic.ttf"; sourceTree = "<group>"; };
 		261112A628438E7E008F99E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		261112AB284441C8008F99E7 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
-		261112AD284441DA008F99E7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2697B4B1284E7E390077660F /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
 		2697B4B3284E862E0077660F /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		2697B4B5284E8A220077660F /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 		26D7663C28410D6A00F80E80 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D7663F28410D6A00F80E80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D7664128410D6A00F80E80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,9 +127,7 @@
 		26D7665D284128F400F80E80 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				261112AD284441DA008F99E7 /* Movie.swift */,
 				2697B4B3284E862E0077660F /* Media.swift */,
-				2697B4B5284E8A220077660F /* Tv.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,8 +240,6 @@
 				26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */,
 				26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */,
 				2697B4B4284E862E0077660F /* Media.swift in Sources */,
-				2697B4B6284E8A220077660F /* Tv.swift in Sources */,
-				261112AE284441DA008F99E7 /* Movie.swift in Sources */,
 				261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

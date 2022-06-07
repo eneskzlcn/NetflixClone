@@ -13,30 +13,34 @@ enum ApiError: Error {
 class ApiCaller {
     static let shared = ApiCaller()
    
-
-    func getTrendingMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullUrl(for: .trendingMoviesRoute), completion: completion)
+    func getMovies(section: MediaSection , completion: @escaping(Result<MediaResponse,Error>)->Void) {
+        switch section {
+        case .trendingMovies:
+            URLSession.shared.getMedias(url: fullUrl(for: .trendingMovies), completion: completion)
+        case .trendingTvs:
+            URLSession.shared.getMedias(url: fullUrl(for: .trendingTvs), completion: completion)
+        case .topRatedMovies:
+            URLSession.shared.getMedias(url: fullUrl(for: .topRatedMovies, params: .languageAndPage), completion: completion)
+        case .upcomingMovies:
+            URLSession.shared.getMedias(url: fullUrl(for: .upcomingMovies, params: .languageAndPage), completion: completion)
+        case .popularMovies:
+            URLSession.shared.getMedias(url: fullUrl(for: .popularMovies, params: .languageAndPage), completion: completion)
+        }
     }
-    func getTrendingTvs(completion: @escaping(Result<TvsResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullUrl(for: .trendingTvsRoute), completion: completion)
-    }
-    func getUpcomingMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullUrl(for: .upcomingMoviesRoute, params: .languageAndPage), completion: completion)
-    }
-    func getPopularMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullUrl(for: .popularMoviesRoute, params: .languageAndPage), completion: completion)
-    }
-    func getTopRatedMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: fullUrl(for: .topRatedMoviesRoute, params: .languageAndPage), completion: completion)
-    }
-    private func fullUrl(for route: ApiRoutes, params: ApiQueryParams? = .none) -> String {
-        var url = "\(Constants.baseURL)\(route.rawValue)?api_key=\(Constants.API_KEY)"
+    private func fullUrl(for section: MediaSection, params: ApiQueryParams? = .none) -> String {
+        var url = "\(Constants.baseURL)\(routes[section]!)?api_key=\(Constants.API_KEY)"
         if let params = params {
             url+=params.rawValue
         }
         return url
     }
-    
+    let routes: [MediaSection: String] = [
+        .topRatedMovies: "/movie/top_rated",
+        .upcomingMovies: "/movie/upcoming",
+        .popularMovies: "/movie/popular",
+        .trendingMovies: "/trending/movie/day",
+        .trendingTvs: "/trending/tv/day"
+    ]
     enum ApiRoutes: String {
         case trendingTvsRoute = "/trending/tv/day"
         case trendingMoviesRoute = "/trending/movie/day"
