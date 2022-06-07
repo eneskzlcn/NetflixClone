@@ -38,10 +38,10 @@ class HomeViewController: UIViewController {
 //            }
 //
 //        }
-        ApiCaller.shared.getTrendingTvsGenericly { results in
+        ApiCaller.shared.getUpcomingMovies { results in
             switch results {
                       case .success(let trendingTvsResponse):
-                          print(trendingTvsResponse.results[0])
+                          print(trendingTvsResponse)
                       case .failure(let error):
                           print(error)
         }
@@ -58,14 +58,14 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     private func getTrendingMovies() {
-        ApiCaller.shared.getTrendingMovies{ results in
-            switch results {
-            case .success(let movies):
-                print(movies[0])
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        ApiCaller.shared.getTrendingMovies{ results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies[0])
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 }
 
