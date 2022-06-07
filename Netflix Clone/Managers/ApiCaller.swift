@@ -14,29 +14,35 @@ class ApiCaller {
     static let shared = ApiCaller()
    
 
-    func getTrendingMovies(completion: @escaping(Result<TrendingMoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: trendingMediaURL(for: .trendingMoviesRoute), completion: completion)
+    func getTrendingMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullUrl(for: .trendingMoviesRoute), completion: completion)
     }
-    func getTrendingTvs(completion: @escaping(Result<TrendingTvsResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: trendingMediaURL(for: .trendingTvsRoute), completion: completion)
+    func getTrendingTvs(completion: @escaping(Result<TvsResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullUrl(for: .trendingTvsRoute), completion: completion)
     }
-    func getUpcomingMovies(completion: @escaping(Result<UpcomingMoviesResponse,Error>)->Void) {
-        URLSession.shared.getMedias(url: upcomingMoviesURL(for: .upcomingMoviesRoute, params: .languageAndPage), completion: completion)
+    func getUpcomingMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullUrl(for: .upcomingMoviesRoute, params: .languageAndPage), completion: completion)
     }
-    private func trendingMediaURL(for route: ApiRoutes) -> String {
-        "\(Constants.baseURL)\(route.rawValue)?api_key=\(Constants.API_KEY)"
+    func getPopularMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullUrl(for: .popularMoviesRoute, params: .languageAndPage), completion: completion)
     }
-    private func upcomingMoviesURL(for route: ApiRoutes,params: ApiQueryParams?) -> String {
+    func getTopRatedMovies(completion: @escaping(Result<MoviesResponse,Error>)->Void) {
+        URLSession.shared.getMedias(url: fullUrl(for: .topRatedMoviesRoute, params: .languageAndPage), completion: completion)
+    }
+    private func fullUrl(for route: ApiRoutes, params: ApiQueryParams? = .none) -> String {
         var url = "\(Constants.baseURL)\(route.rawValue)?api_key=\(Constants.API_KEY)"
         if let params = params {
             url+=params.rawValue
         }
         return url
     }
+    
     enum ApiRoutes: String {
         case trendingTvsRoute = "/trending/tv/day"
         case trendingMoviesRoute = "/trending/movie/day"
         case upcomingMoviesRoute = "/movie/upcoming"
+        case popularMoviesRoute = "/movie/popular"
+        case topRatedMoviesRoute = "/movie/top_rated"
     }
     enum ApiQueryParams: String {
         case languageAndPage = "&language=en-US&page=1"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrendingMoviesResponse: NetflixMedia {
+struct MoviesResponse: NetflixMedia {
     let results: [Movie]
 }
 struct Movie: NetflixMedia {
@@ -21,6 +21,4 @@ struct Movie: NetflixMedia {
     let release_date: String?
     let vote_average: Double
 }
-struct UpcomingMoviesResponse: NetflixMedia {
-    let results: [Movie]
-}
+

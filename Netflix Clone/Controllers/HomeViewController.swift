@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
 //            }
 //
 //        }
-        ApiCaller.shared.getUpcomingMovies { results in
+        ApiCaller.shared.getTopRatedMovies { results in
             switch results {
                       case .success(let trendingTvsResponse):
                           print(trendingTvsResponse)

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct TrendingTvsResponse: NetflixMedia{
+struct TvsResponse: NetflixMedia{
     let results : [Movie]
 }
 
