@@ -49,7 +49,7 @@ class HeroHeaderUIView: UIView {
         layer.addSublayer(gradientLayer)
     }
     
-    // MARK: INHERITED FUNCTIONS
+    // MARK: Applying Constraints
     private func applyConstraints() {
         let playButtonConstraints = [
             playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
@@ -63,7 +63,7 @@ class HeroHeaderUIView: UIView {
         ]
         NSLayoutConstraint.activate(playButtonConstraints+downloadButtonConstraints)
     }
-    
+    // MARK: Overrided Inherited Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(heroImageView)
