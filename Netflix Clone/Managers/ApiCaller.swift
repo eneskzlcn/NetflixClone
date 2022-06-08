@@ -13,18 +13,11 @@ enum ApiError: Error {
 class ApiCaller {
     static let shared = ApiCaller()
    
-    func getMovies(section: MediaSection , completion: @escaping(Result<MediaResponse,Error>)->Void) {
-        switch section {
-        case .trendingMovies:
-            URLSession.shared.getMedias(url: fullUrl(for: .trendingMovies), completion: completion)
-        case .trendingTvs:
-            URLSession.shared.getMedias(url: fullUrl(for: .trendingTvs), completion: completion)
-        case .topRatedMovies:
-            URLSession.shared.getMedias(url: fullUrl(for: .topRatedMovies, params: .languageAndPage), completion: completion)
-        case .upcomingMovies:
-            URLSession.shared.getMedias(url: fullUrl(for: .upcomingMovies, params: .languageAndPage), completion: completion)
-        case .popularMovies:
-            URLSession.shared.getMedias(url: fullUrl(for: .popularMovies, params: .languageAndPage), completion: completion)
+    func getMedias(section: MediaSection , completion: @escaping(Result<MediaResponse,Error>)->Void) {
+        if section == .trendingMovies || section == .trendingTvs {
+            URLSession.shared.getMedias(url: fullUrl(for: section), completion: completion)
+        }else {
+            URLSession.shared.getMedias(url: fullUrl(for: section, params: .languageAndPage), completion: completion)
         }
     }
     private func fullUrl(for section: MediaSection, params: ApiQueryParams? = .none) -> String {
@@ -34,6 +27,9 @@ class ApiCaller {
         }
         return url
     }
+    public func posterUrl(for posterPath: String) -> String {
+        "\(Constants.posterBaseURL)\(posterPath)"
+    }
     let routes: [MediaSection: String] = [
         .topRatedMovies: "/movie/top_rated",
         .upcomingMovies: "/movie/upcoming",
@@ -41,19 +37,14 @@ class ApiCaller {
         .trendingMovies: "/trending/movie/day",
         .trendingTvs: "/trending/tv/day"
     ]
-    enum ApiRoutes: String {
-        case trendingTvsRoute = "/trending/tv/day"
-        case trendingMoviesRoute = "/trending/movie/day"
-        case upcomingMoviesRoute = "/movie/upcoming"
-        case popularMoviesRoute = "/movie/popular"
-        case topRatedMoviesRoute = "/movie/top_rated"
-    }
+    
     enum ApiQueryParams: String {
         case languageAndPage = "&language=en-US&page=1"
     }
     struct Constants {
         static let baseURL = "https://api.themoviedb.org/3"
         static let API_KEY = "d510c98dae7bbe1625911ac648cb479d"
+        static let posterBaseURL = "https://image.tmdb.org/t/p/w500/"
     }
 }
 
@@ -74,23 +65,3 @@ extension URLSession {
         task.resume()
     }
 }
-
-/* Classical Type Of Url Session Data Fetch For Getting Trending Movies
- 
-    func getTrendingMovies(completion: @escaping(Result<[Movie],Error>)->Void) {
-        guard let url=URL(string: fullApiURL(for: .trendingMoviesRoute)) else{ return }
-        let task=URLSession.shared.dataTask(with:URLRequest(url:url)){ data,_,error in
-            guard let data=data, error == nil else{
-                return
-            }
-            do{
-                let results = try JSONDecoder().decode(TrendingMoviesResponse.self,from:data)
-                completion(.success(results.results))
-            }catch{
-                completion(.failure(ApiError.failedToFetchData))
-            }
-        }
-        task.resume()
-    }
-    
-*/

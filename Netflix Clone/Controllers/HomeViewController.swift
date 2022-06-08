@@ -9,7 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["Trending Movies","Trending Tv","Popular","Upcoming Movies","Top rated"]
+    let sectionTitles: [MediaSection: String] = [
+        .trendingMovies:"Trending Movies",.trendingTvs: "Trending Tv",.popularMovies: "Popular",.upcomingMovies: "Upcoming Movies",.topRatedMovies: "Top Rated"]
+    
     private let homeFeedTable : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
@@ -27,14 +29,6 @@ class HomeViewController: UIViewController {
         configureNavbar()
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = heroHeaderView
-        ApiCaller.shared.getMovies(section: .topRatedMovies) { results in
-            switch results {
-                      case .success(let trendingTvsResponse):
-                          print(trendingTvsResponse)
-                      case .failure(let error):
-                          print(error)
-        }
-        }
     }
     
     private func configureNavbar() {
@@ -46,16 +40,6 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-    private func getTrendingMovies() {
-//        ApiCaller.shared.getTrendingMovies{ results in
-//            switch results {
-//            case .success(let movies):
-//                print(movies[0])
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-    }
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
@@ -63,7 +47,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         return sectionTitles.count
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        return sectionTitles[MediaSection(rawValue: section)!]
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,6 +56,15 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
             return UITableViewCell()
+        }
+        guard let section = MediaSection(rawValue: indexPath.section) else { return cell }
+        ApiCaller.shared.getMedias(section: section) { results in
+            switch results {
+            case .success(let mediaResponse):
+                cell.setMedias(with: mediaResponse.results)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
         return cell
     }

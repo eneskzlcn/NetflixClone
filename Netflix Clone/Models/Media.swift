@@ -26,10 +26,10 @@ struct Media: NetflixMedia {
     let vote_average: Double
 }
 
-enum MediaSection {
-    case trendingMovies
-    case trendingTvs
-    case topRatedMovies
-    case upcomingMovies
-    case popularMovies
+enum MediaSection: Int {
+    case trendingMovies = 0
+    case trendingTvs = 1
+    case popularMovies = 2
+    case upcomingMovies = 3
+    case topRatedMovies = 4
 }
