@@ -51,7 +51,7 @@ class UpcomingMediaTableViewCell: UITableViewCell {
             posterImageView.widthAnchor.constraint(equalToConstant: 100)
         ]
         let playButtonConstraints = [
-            playButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            playButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             playButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             playButton.widthAnchor.constraint(equalToConstant: 50)
         ]

@@ -55,23 +55,35 @@ class UpComingViewController: UIViewController {
 
 extension UpComingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.upcomingMedias.count
+        return 1
     }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        self.upcomingMedias.count
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingMediaTableViewCell.identifier, for: indexPath)
                 as? UpcomingMediaTableViewCell else {
                     return UITableViewCell()
                 }
-        guard let posterPath = upcomingMedias[indexPath.row].poster_path else { return cell}
+        guard let posterPath = upcomingMedias[indexPath.section].poster_path else { return cell}
         cell.setPoster(path: posterPath)
-        guard let mediaTitle = upcomingMedias[indexPath.row].original_title else { return cell}
+        guard let mediaTitle = upcomingMedias[indexPath.section].original_title else { return cell}
         cell.setMediaTitle(with: mediaTitle)
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        10
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+           let headerView = UIView()
+           headerView.backgroundColor = UIColor.clear
+           return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.cellHeight
     }
+    
     
 }

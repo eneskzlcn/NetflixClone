@@ -112,7 +112,6 @@
 				26D766532841138100F80E80 /* Controllers */,
 				26D7663F28410D6A00F80E80 /* AppDelegate.swift */,
 				26D7664128410D6A00F80E80 /* SceneDelegate.swift */,
-				26D7664328410D6A00F80E80 /* TabBarViewController.swift */,
 				261112A12842E30F008F99E7 /* Assets.xcassets */,
 				26D7664A28410D6C00F80E80 /* LaunchScreen.storyboard */,
 				26D7664D28410D6C00F80E80 /* Info.plist */,
@@ -124,6 +123,7 @@
 		26D766532841138100F80E80 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26D7664328410D6A00F80E80 /* TabBarViewController.swift */,
 				26D766542841139900F80E80 /* UpComingViewController.swift */,
 				26D76656284113B800F80E80 /* SearchViewController.swift */,
 				26D76658284113D000F80E80 /* DownloadsViewController.swift */,
