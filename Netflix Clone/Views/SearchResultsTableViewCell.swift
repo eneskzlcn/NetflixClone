@@ -1,18 +1,16 @@
 //
-//  UpcomingMediaTableViewCell.swift
+//  SearchResultsTableViewCell.swift
 //  Netflix Clone
 //
-//  Created by Nazif Enes Kızılcin on 8.06.2022.
+//  Created by Nazif Enes Kızılcin on 11.06.2022.
 //
 
 import UIKit
-import SDWebImage
 
-class UpcomingMediaTableViewCell: UITableViewCell {
+class SearchResultsTableViewCell: UITableViewCell {
     
-    // MARK: Variables
-    static let identifier = "UpcomingMediaTableViewCell"
-   
+    static let identifier = "SearchResultsRableViewCell"
+    
     // MARK: UI Variables
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -59,23 +57,22 @@ class UpcomingMediaTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(mediaTitleConstraints)
         NSLayoutConstraint.activate(playButtonConstraints)
     }
-    // MARK: Overrided Inherited Functions
+    // MARK: Inherited Constructors
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style,reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(posterImageView)
         contentView.addSubview(mediaTitle)
         contentView.addSubview(playButton)
-        applyConstraints()
     }
     override func layoutSubviews() {
         super.layoutSubviews()
         posterImageView.frame = contentView.bounds
-        
     }
     required init?(coder: NSCoder) {
         fatalError()
     }
+    // MARK: Setters
     public func setPoster(path posterPath: String) {
         guard let url = URL(string: ApiCaller.shared.posterUrl(for: posterPath)) else { return }
         imageView?.sd_setImage(with: url, completed: nil)

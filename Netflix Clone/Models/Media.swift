@@ -32,4 +32,6 @@ enum MediaSection: Int {
     case popularMovies = 2
     case upcomingMovies = 3
     case topRatedMovies = 4
+    case discoverMovies = 5
+    case searchMovies = 6
 }

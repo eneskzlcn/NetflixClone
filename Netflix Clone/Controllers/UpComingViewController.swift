@@ -1,4 +1,3 @@
-//
 //  UpComingViewController.swift
 //  Netflix Clone
 //
@@ -13,7 +12,7 @@ class UpComingViewController: UIViewController {
     
     private let upcomingTable: UITableView = {
         let table = UITableView()
-        table.register(UpcomingMediaTableViewCell.self, forCellReuseIdentifier: UpcomingMediaTableViewCell.identifier)
+        table.register(MediaCoverTableViewCell.self, forCellReuseIdentifier: MediaCoverTableViewCell.identifier)
         return table
     }()
     override func viewDidLoad() {
@@ -49,7 +48,8 @@ class UpComingViewController: UIViewController {
         }
     }
     struct Constants {
-        static let cellHeight: CGFloat = 150
+        static let heightForRow: CGFloat = 150
+        static let heightForHeaderInSection: CGFloat = 0.5
     }
 }
 
@@ -60,20 +60,17 @@ extension UpComingViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         self.upcomingMedias.count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UpcomingMediaTableViewCell.identifier, for: indexPath)
-                as? UpcomingMediaTableViewCell else {
-                    return UITableViewCell()
-                }
-        guard let posterPath = upcomingMedias[indexPath.section].poster_path else { return cell}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaCoverTableViewCell.identifier, for: indexPath)
+                as? MediaCoverTableViewCell else { return UITableViewCell() }
+        guard let posterPath = upcomingMedias[indexPath.section].poster_path else { return cell }
         cell.setPoster(path: posterPath)
-        guard let mediaTitle = upcomingMedias[indexPath.section].original_title else { return cell}
+        guard let mediaTitle = upcomingMedias[indexPath.section].original_title else { return cell }
         cell.setMediaTitle(with: mediaTitle)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        10
+        Constants.heightForHeaderInSection
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
            let headerView = UIView()
@@ -82,7 +79,7 @@ extension UpComingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants.cellHeight
+        return Constants.heightForRow
     }
     
     

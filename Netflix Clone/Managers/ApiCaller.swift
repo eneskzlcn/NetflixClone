@@ -12,13 +12,18 @@ enum ApiError: Error {
 }
 class ApiCaller {
     static let shared = ApiCaller()
-   
-    func getMedias(section: MediaSection , completion: @escaping(Result<MediaResponse,Error>)->Void) {
+
+    func getMedias(section: MediaSection, completion: @escaping(Result<MediaResponse,Error>)->Void) {
         if section == .trendingMovies || section == .trendingTvs {
             URLSession.shared.getMedias(url: fullUrl(for: section), completion: completion)
         }else {
             URLSession.shared.getMedias(url: fullUrl(for: section, params: .languageAndPage), completion: completion)
         }
+    }
+    func search(for query: String,completion: @escaping(Result<MediaResponse,Error>)->Void) {
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed) else { return }
+        let urlWithQuery = "\(fullUrl(for: .searchMovies))&query=\(query)"
+        URLSession.shared.getMedias(url: urlWithQuery, completion: completion)
     }
     private func fullUrl(for section: MediaSection, params: ApiQueryParams? = .none) -> String {
         var url = "\(Constants.baseURL)\(routes[section]!)?api_key=\(Constants.API_KEY)"
@@ -34,8 +39,10 @@ class ApiCaller {
         .topRatedMovies: "/movie/top_rated",
         .upcomingMovies: "/movie/upcoming",
         .popularMovies: "/movie/popular",
+        .discoverMovies: "/discover/movie",
         .trendingMovies: "/trending/movie/day",
-        .trendingTvs: "/trending/tv/day"
+        .trendingTvs: "/trending/tv/day",
+        .searchMovies: "/search/movie"
     ]
     
     enum ApiQueryParams: String {
