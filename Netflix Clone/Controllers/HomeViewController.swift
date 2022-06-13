@@ -27,10 +27,23 @@ class HomeViewController: UIViewController {
         homeFeedTable.dataSource = self
         
         configureNavbar()
+        configureHeroHeaderView()
+    }
+    private func configureHeroHeaderView() {
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        MediaApiManager.shared.getMedias(section: .trendingMovies) { result in
+            switch result {
+            case .success(let mediaResponse):
+                guard let randomMedia = mediaResponse.results.randomElement(),
+                      let posterPath = randomMedia.poster_path else { return }
+                heroHeaderView.loadHeroImage(from: posterPath)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
         homeFeedTable.tableHeaderView = heroHeaderView
     }
-    
     private func configureNavbar() {
         var image = UIImage(named: "netflix-logo-big.png")
         image = image?.withRenderingMode(.alwaysOriginal)

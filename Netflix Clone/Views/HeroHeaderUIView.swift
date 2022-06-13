@@ -83,8 +83,8 @@ class HeroHeaderUIView: UIView {
     
     //MARK: Setter
     
-    func setHeroImage(from path: String) {
-        guard let url = URL(string: path) else { return }
+    func loadHeroImage(from path: String) {
+        guard let url = URL(string: MediaApiManager.shared.posterUrl(for: path)) else { return }
         heroImageView.sd_setImage(with: url, completed: nil)
     }
     
