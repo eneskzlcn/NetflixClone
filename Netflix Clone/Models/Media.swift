@@ -8,9 +8,9 @@
 import Foundation
 
 
-protocol NetflixMedia: Codable {
-    
-}
+protocol NetflixMedia: Codable {}
+
+
 struct MediaResponse: NetflixMedia {
     let results: [Media]
 }

@@ -35,7 +35,7 @@ class UpComingViewController: UIViewController {
     }
     
     public func fetchData() {
-        ApiCaller.shared.getMedias(section: .upcomingMovies) {[weak self] results in
+        MediaApiManager.shared.getMedias(section: .upcomingMovies) {[weak self] results in
             switch results{
             case .success(let mediaResponse):
                 self?.upcomingMedias = mediaResponse.results

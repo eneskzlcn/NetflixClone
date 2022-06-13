@@ -1,5 +1,5 @@
 //
-//  ApiCaller.swift
+//  MediaApiManager.swift
 //  Netflix Clone
 //
 //  Created by Nazif Enes Kızılcin on 30.05.2022.
@@ -10,8 +10,8 @@ import Foundation
 enum ApiError: Error {
     case failedToFetchData
 }
-class ApiCaller {
-    static let shared = ApiCaller()
+class MediaApiManager {
+    static let shared = MediaApiManager()
 
     func getMedias(section: MediaSection, completion: @escaping(Result<MediaResponse,Error>)->Void) {
         if section == .trendingMovies || section == .trendingTvs {

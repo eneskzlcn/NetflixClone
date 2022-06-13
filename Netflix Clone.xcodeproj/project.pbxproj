@@ -11,7 +11,7 @@
 		261112A728438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 261112A428438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf */; };
 		261112A828438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */; };
 		261112A928438E7E008F99E7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 261112A628438E7E008F99E7 /* OFL.txt */; };
-		261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AB284441C8008F99E7 /* ApiCaller.swift */; };
+		261112AC284441C8008F99E7 /* MediaApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261112AB284441C8008F99E7 /* MediaApiManager.swift */; };
 		26664D4B2850A9E0000FAFC0 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26664D4A2850A9E0000FAFC0 /* TitleCollectionViewCell.swift */; };
 		26664D4E2850AB88000FAFC0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 26664D4D2850AB88000FAFC0 /* SDWebImage */; };
 		26664D502850AB88000FAFC0 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26664D4F2850AB88000FAFC0 /* SDWebImageMapKit */; };
@@ -21,6 +21,8 @@
 		269BF5AE2854AFB800F8956C /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5AD2854AFB800F8956C /* SearchResultsViewController.swift */; };
 		269BF5B028563DD500F8956C /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5AF28563DD500F8956C /* ObservableObject.swift */; };
 		269BF5B228563EF700F8956C /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5B128563EF700F8956C /* SearchResultsViewModel.swift */; };
+		26A542B42856E5BD007A1F18 /* YoutubeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A542B32856E5BD007A1F18 /* YoutubeApiManager.swift */; };
+		26A542B62856E8B1007A1F18 /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A542B52856E8B1007A1F18 /* Youtube.swift */; };
 		26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7663F28410D6A00F80E80 /* AppDelegate.swift */; };
 		26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664128410D6A00F80E80 /* SceneDelegate.swift */; };
 		26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D7664328410D6A00F80E80 /* TabBarViewController.swift */; };
@@ -38,7 +40,7 @@
 		261112A428438E7E008F99E7 /* TiroDevanagariSanskrit-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TiroDevanagariSanskrit-Regular.ttf"; sourceTree = "<group>"; };
 		261112A528438E7E008F99E7 /* TiroDevanagariSanskrit-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TiroDevanagariSanskrit-Italic.ttf"; sourceTree = "<group>"; };
 		261112A628438E7E008F99E7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		261112AB284441C8008F99E7 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		261112AB284441C8008F99E7 /* MediaApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaApiManager.swift; sourceTree = "<group>"; };
 		26664D4A2850A9E0000FAFC0 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		26664D512850C674000FAFC0 /* MediaCoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCoverTableViewCell.swift; sourceTree = "<group>"; };
 		2697B4B1284E7E390077660F /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		269BF5AD2854AFB800F8956C /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		269BF5AF28563DD500F8956C /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		269BF5B128563EF700F8956C /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		26A542B32856E5BD007A1F18 /* YoutubeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApiManager.swift; sourceTree = "<group>"; };
+		26A542B52856E8B1007A1F18 /* Youtube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		26D7663C28410D6A00F80E80 /* Netflix Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D7663F28410D6A00F80E80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D7664128410D6A00F80E80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +90,8 @@
 		261112AA2844419E008F99E7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				261112AB284441C8008F99E7 /* ApiCaller.swift */,
+				261112AB284441C8008F99E7 /* MediaApiManager.swift */,
+				26A542B32856E5BD007A1F18 /* YoutubeApiManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2697B4B3284E862E0077660F /* Media.swift */,
+				26A542B52856E8B1007A1F18 /* Youtube.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,12 +280,14 @@
 				26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */,
 				26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */,
 				269BF5AE2854AFB800F8956C /* SearchResultsViewController.swift in Sources */,
+				26A542B42856E5BD007A1F18 /* YoutubeApiManager.swift in Sources */,
 				26664D522850C674000FAFC0 /* MediaCoverTableViewCell.swift in Sources */,
 				2697B4B2284E7E390077660F /* StringOperations.swift in Sources */,
 				26D7664228410D6A00F80E80 /* SceneDelegate.swift in Sources */,
 				26D7666428413C9600F80E80 /* HeroHeaderUIView.swift in Sources */,
+				26A542B62856E8B1007A1F18 /* Youtube.swift in Sources */,
 				2697B4B4284E862E0077660F /* Media.swift in Sources */,
-				261112AC284441C8008F99E7 /* ApiCaller.swift in Sources */,
+				261112AC284441C8008F99E7 /* MediaApiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

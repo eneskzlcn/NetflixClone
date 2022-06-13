@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
     //MARK: Fetch Data
     
     func fetchTopRatedMovies() {
-        ApiCaller.shared.getMedias(section: .discoverMovies) {[weak self] results in
+        MediaApiManager.shared.getMedias(section: .discoverMovies) {[weak self] results in
             switch results{
             case .success(let mediaResponse):
                 self?.searchResults = mediaResponse.results
@@ -112,7 +112,7 @@ extension SearchViewController: UISearchResultsUpdating {
         guard let query = searchBar.text,
             query.trimmingCharacters(in: .whitespaces).count > 3,
               let resultsController = searchController.searchResultsController as? SearchResultsViewController else { return }
-        ApiCaller.shared.search(for: query) { result in
+        MediaApiManager.shared.search(for: query) { result in
             switch result {
             case .success(let mediaResponse):
                 resultsController.searchResults = mediaResponse.results

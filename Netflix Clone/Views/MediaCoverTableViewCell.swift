@@ -77,7 +77,7 @@ class MediaCoverTableViewCell: UITableViewCell {
         fatalError()
     }
     public func setPoster(path posterPath: String) {
-        guard let url = URL(string: ApiCaller.shared.posterUrl(for: posterPath)) else { return }
+        guard let url = URL(string: MediaApiManager.shared.posterUrl(for: posterPath)) else { return }
         imageView?.sd_setImage(with: url, completed: nil)
     }
     public func setMediaTitle(with title: String) {

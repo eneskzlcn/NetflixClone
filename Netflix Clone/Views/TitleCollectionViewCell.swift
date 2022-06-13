@@ -31,7 +31,7 @@ class TitleCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
     public func loadPoster(for path: String) {
-        guard let url = URL(string: ApiCaller.shared.posterUrl(for: path)) else { return }
+        guard let url = URL(string: MediaApiManager.shared.posterUrl(for: path)) else { return }
         posterImageView.sd_setImage(with: url, completed: nil)
     }
 }

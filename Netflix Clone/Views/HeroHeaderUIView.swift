@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroHeaderUIView: UIView {
 
@@ -78,6 +79,13 @@ class HeroHeaderUIView: UIView {
     }
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    //MARK: Setter
+    
+    func setHeroImage(from path: String) {
+        guard let url = URL(string: path) else { return }
+        heroImageView.sd_setImage(with: url, completed: nil)
     }
     
 }

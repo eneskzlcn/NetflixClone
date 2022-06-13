@@ -16,7 +16,7 @@ final class SearchResultsViewModel {
     var searchResult: ObservableObject<[Media]> = ObservableObject([Media]())
     
     init() {
-        ApiCaller.shared.getMedias(section: .topRatedMovies, completion: {[weak self] results in
+        MediaApiManager.shared.getMedias(section: .topRatedMovies, completion: {[weak self] results in
             switch results {
             case .success(let mediaResponse):
                 self?.searchResult = ObservableObject(mediaResponse.results)
@@ -34,7 +34,7 @@ final class SearchResultsViewModel {
     }
     
     func search(with query: String){
-        ApiCaller.shared.search(for: query){ [weak self] results in
+        MediaApiManager.shared.search(for: query){ [weak self] results in
             switch results {
             case .success(let mediaResponse):
                 self?.searchResult.value = mediaResponse.results

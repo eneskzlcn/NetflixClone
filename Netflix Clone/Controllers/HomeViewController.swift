@@ -58,7 +58,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         guard let section = MediaSection(rawValue: indexPath.section) else { return cell }
-        ApiCaller.shared.getMedias(section: section) { results in
+        MediaApiManager.shared.getMedias(section: section) { results in
             switch results {
             case .success(let mediaResponse):
                 cell.setMedias(with: mediaResponse.results)

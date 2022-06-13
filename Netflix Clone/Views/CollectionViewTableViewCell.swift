@@ -60,5 +60,22 @@ extension CollectionViewTableViewCell : UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return medias.count
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let media = medias[indexPath.row]
+        
+        guard let mediaName = media.original_name ?? media.original_title else { return }
+        
+        YoutubeApiManager.shared.searchMediaContent(with: mediaName + " trailer") { result in
+            switch result {
+            case .success(let youtubeSearchResponse):
+                print(youtubeSearchResponse.items[0])
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
     
 }
