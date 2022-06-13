@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
         
         configureNavbar()
         configureHeroHeaderView()
+        navigationController?.pushViewController(MediaDetailViewController(), animated: true)
     }
     private func configureHeroHeaderView() {
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
@@ -100,6 +101,5 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.font = UIFont(name: "Tiro Devanagari Sanskrit Regular", size: 15)
         header.textLabel?.textColor = .white
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x, y: header.bounds.origin.y, width: 100, height: header.frame.height)
-//        header.textLabel?.text = header.textLabel?.text?.titleCased()
     }
 }
