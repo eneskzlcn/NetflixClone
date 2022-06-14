@@ -8,40 +8,7 @@
 import Foundation
 
 
-final class SearchResultsViewModel {
+struct SearchResultsViewModel {
     
-
-    typealias SearchListener = ([Media]) -> Void
-    
-    var searchResult: ObservableObject<[Media]> = ObservableObject([Media]())
-    
-    init() {
-        MediaApiManager.shared.getMedias(section: .topRatedMovies, completion: {[weak self] results in
-            switch results {
-            case .success(let mediaResponse):
-                self?.searchResult = ObservableObject(mediaResponse.results)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        })
-    }
-    func bind(listener: @escaping SearchListener) {
-        searchResult.bind(listener)
-    }
-    
-    func media(at: Int) -> Media {
-        searchResult.value[at]
-    }
-    
-    func search(with query: String){
-        MediaApiManager.shared.search(for: query){ [weak self] results in
-            switch results {
-            case .success(let mediaResponse):
-                self?.searchResult.value = mediaResponse.results
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
     
 }

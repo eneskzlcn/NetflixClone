@@ -33,10 +33,10 @@ class MediaDetailViewController: UIViewController {
     private let downloadButton: UIButton = {
         let button = UIButton()
         button.setTitle("Download", for: .normal)
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.borderWidth = 1
+        button.backgroundColor = .red
+        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 8
         return button
     }()
     
@@ -67,11 +67,13 @@ class MediaDetailViewController: UIViewController {
         ]
         let downloadButtonConstraints = [
             downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 20),
-            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            downloadButton.widthAnchor.constraint(equalToConstant: 140),
+            downloadButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
-        NSLayoutConstraint.activate(titleLabelConstraints)
+        NSLayoutConstraint.activate(titleLabelConstraints)  
         NSLayoutConstraint.activate(overviewLabelConstraints)
         NSLayoutConstraint.activate(downloadButtonConstraints)
     }
@@ -80,10 +82,15 @@ class MediaDetailViewController: UIViewController {
     public func configure(with model: MediaDetailViewModel) {
         titleLabel.text = model.title
         overviewLabel.text = model.overview
+        
+        guard let url = URL(string: "\(YoutubeApiManager.Constants.embedUrl)\(model.youtubeView.id.videoId)") else { return }
+        
+        webView.load(URLRequest(url: url))
     }
     // MARK: Overriding Inherited Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overviewLabel)

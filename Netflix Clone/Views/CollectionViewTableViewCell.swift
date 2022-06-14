@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: MediaDetailViewModel)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
 
     static let identifier = "CollectionViewTableViewCell"
     
     private var medias: [Media] = []
     
+    weak var delegate: CollectionViewTableViewCellDelegate?
+        
     private let collectionView : UICollectionView =  {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -67,10 +73,14 @@ extension CollectionViewTableViewCell : UICollectionViewDelegate, UICollectionVi
         
         guard let mediaName = media.original_name ?? media.original_title else { return }
         
-        YoutubeApiManager.shared.searchMediaContent(with: mediaName + " trailer") { result in
+        YoutubeApiManager.shared.searchMediaContent(with: mediaName + " trailer") {[weak self] result in
             switch result {
-            case .success(let youtubeSearchResponse):
-                print(youtubeSearchResponse.items[0])
+            case .success(let videoElement):
+                print(videoElement)
+                guard let title = self?.medias[indexPath.row].original_name ??  self?.medias[indexPath.row].original_title else { return }
+                guard let strongSelf = self else { return }
+                let viewModel = MediaDetailViewModel(title: title, youtubeView: videoElement, overview: self?.medias[indexPath.row].overview ?? "")
+                self?.delegate?.collectionViewTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
             case .failure(let error):
                 print(error)
             }

@@ -45,6 +45,7 @@ class SearchViewController: UIViewController {
         super.viewDidLayoutSubviews()
         searchResultsTable.frame = view.bounds
     }
+    
     //MARK: Fetch Data
     
     func fetchTopRatedMovies() {
@@ -104,14 +105,36 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.heightForRow
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let title = searchResults[indexPath.section].original_name ??  searchResults[indexPath.section].original_title else {
+            print("There is no title there.")
+            return
+        }
+        let overview = searchResults[indexPath.section].overview ?? ""
+        YoutubeApiManager.shared.searchMediaContent(with: title+" trailer") {[weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                  case .success(let youtubeVideoElement):
+                      let viewModel = MediaDetailViewModel(title: title, youtubeView: youtubeVideoElement, overview: overview)
+                      let viewController = MediaDetailViewController()
+                      viewController.configure(with: viewModel)
+                      self?.navigationController?.pushViewController(viewController, animated: true)
+                  case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
     
 }
-extension SearchViewController: UISearchResultsUpdating {
+extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         guard let query = searchBar.text,
             query.trimmingCharacters(in: .whitespaces).count > 3,
               let resultsController = searchController.searchResultsController as? SearchResultsViewController else { return }
+        resultsController.delegate = self
         MediaApiManager.shared.search(for: query) { result in
             switch result {
             case .success(let mediaResponse):
@@ -125,6 +148,13 @@ extension SearchViewController: UISearchResultsUpdating {
         }
         
     }
-    
-    
+}
+extension SearchViewController: SearchResultsViewControllerDelegate {
+    func searchResultsViewControllerDidSelect(viewModel: MediaDetailViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let mediaDetailViewController = MediaDetailViewController()
+            mediaDetailViewController.configure(with: viewModel)
+            self?.navigationController?.pushViewController(mediaDetailViewController, animated: true)
+        }
+    }
 }

@@ -82,5 +82,26 @@ extension UpComingViewController: UITableViewDelegate, UITableViewDataSource {
         return Constants.heightForRow
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let title = upcomingMedias[indexPath.section].original_name ??  upcomingMedias[indexPath.section].original_title else {
+            print("There is no title there.")
+            return
+        }
+        let overview = upcomingMedias[indexPath.section].overview ?? ""
+        YoutubeApiManager.shared.searchMediaContent(with: title+" trailer") {[weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                  case .success(let youtubeVideoElement):
+                      let viewModel = MediaDetailViewModel(title: title, youtubeView: youtubeVideoElement, overview: overview)
+                      let viewController = MediaDetailViewController()
+                      viewController.configure(with: viewModel)
+                      self?.navigationController?.pushViewController(viewController, animated: true)
+                  case .failure(let error):
+                    print(error)
+                }
+            }
+        }        
+    }
     
 }

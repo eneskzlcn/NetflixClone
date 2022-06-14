@@ -28,7 +28,6 @@ class HomeViewController: UIViewController {
         
         configureNavbar()
         configureHeroHeaderView()
-        navigationController?.pushViewController(MediaDetailViewController(), animated: true)
     }
     private func configureHeroHeaderView() {
         let heroHeaderView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
@@ -80,6 +79,8 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
                 print(error.localizedDescription)
             }
         }
+        cell.delegate = self
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -101,5 +102,15 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         header.textLabel?.font = UIFont(name: "Tiro Devanagari Sanskrit Regular", size: 15)
         header.textLabel?.textColor = .white
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x, y: header.bounds.origin.y, width: 100, height: header.frame.height)
+    }
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: MediaDetailViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let mediaDetailViewController = MediaDetailViewController()
+            mediaDetailViewController.configure(with: viewModel)
+            self?.navigationController?.pushViewController(mediaDetailViewController, animated: true)
+        }
     }
 }

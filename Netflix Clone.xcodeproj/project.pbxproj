@@ -19,8 +19,6 @@
 		2697B4B2284E7E390077660F /* StringOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B1284E7E390077660F /* StringOperations.swift */; };
 		2697B4B4284E862E0077660F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697B4B3284E862E0077660F /* Media.swift */; };
 		269BF5AE2854AFB800F8956C /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5AD2854AFB800F8956C /* SearchResultsViewController.swift */; };
-		269BF5B028563DD500F8956C /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5AF28563DD500F8956C /* ObservableObject.swift */; };
-		269BF5B228563EF700F8956C /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269BF5B128563EF700F8956C /* SearchResultsViewModel.swift */; };
 		26A542B42856E5BD007A1F18 /* YoutubeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A542B32856E5BD007A1F18 /* YoutubeApiManager.swift */; };
 		26A542B62856E8B1007A1F18 /* Youtube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A542B52856E8B1007A1F18 /* Youtube.swift */; };
 		26A542B92856F7A5007A1F18 /* MediaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A542B82856F7A5007A1F18 /* MediaDetailViewController.swift */; };
@@ -48,8 +46,6 @@
 		2697B4B1284E7E390077660F /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
 		2697B4B3284E862E0077660F /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		269BF5AD2854AFB800F8956C /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
-		269BF5AF28563DD500F8956C /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
-		269BF5B128563EF700F8956C /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		26A542B32856E5BD007A1F18 /* YoutubeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApiManager.swift; sourceTree = "<group>"; };
 		26A542B52856E8B1007A1F18 /* Youtube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube.swift; sourceTree = "<group>"; };
 		26A542B82856F7A5007A1F18 /* MediaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +99,6 @@
 		269BF5B32856686500F8956C /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				26D76656284113B800F80E80 /* SearchViewController.swift */,
 				269BF5AD2854AFB800F8956C /* SearchResultsViewController.swift */,
 			);
 			path = Search;
@@ -112,6 +107,7 @@
 		26A542B72856F6E6007A1F18 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				26D76656284113B800F80E80 /* SearchViewController.swift */,
 				26D7664328410D6A00F80E80 /* TabBarViewController.swift */,
 				26D766542841139900F80E80 /* UpComingViewController.swift */,
 				26D76658284113D000F80E80 /* DownloadsViewController.swift */,
@@ -188,7 +184,6 @@
 		26D7665F2841290C00F80E80 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				269BF5B128563EF700F8956C /* SearchResultsViewModel.swift */,
 				26A542BA285700AD007A1F18 /* MediaDetailViewModel.swift */,
 			);
 			path = ViewModels;
@@ -198,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				2697B4B1284E7E390077660F /* StringOperations.swift */,
-				269BF5AF28563DD500F8956C /* ObservableObject.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -286,11 +280,9 @@
 				26A542B92856F7A5007A1F18 /* MediaDetailViewController.swift in Sources */,
 				26D76657284113B800F80E80 /* SearchViewController.swift in Sources */,
 				26664D4B2850A9E0000FAFC0 /* TitleCollectionViewCell.swift in Sources */,
-				269BF5B028563DD500F8956C /* ObservableObject.swift in Sources */,
 				26D766552841139900F80E80 /* UpComingViewController.swift in Sources */,
 				26D7666228412AB600F80E80 /* CollectionViewTableViewCell.swift in Sources */,
 				26D76659284113D000F80E80 /* DownloadsViewController.swift in Sources */,
-				269BF5B228563EF700F8956C /* SearchResultsViewModel.swift in Sources */,
 				26D7664428410D6A00F80E80 /* TabBarViewController.swift in Sources */,
 				26D7664028410D6A00F80E80 /* AppDelegate.swift in Sources */,
 				26D7665C2841140D00F80E80 /* HomeViewController.swift in Sources */,
